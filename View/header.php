@@ -6,6 +6,6 @@
         <H1>Easy Parking</H1>
     </div>
     <div id='subtitle'> 
-        <h2>La portabilità e l'open souce trovano nuovi spazi</h2>
+        <h2>La portabilità e l'open source trovano nuovi spazi</h2>
     </div>
 </div>

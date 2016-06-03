@@ -26,9 +26,6 @@ include_once 'viewDescriptor.php';
                     <?php 
                         $contenuto=$vd->getContenuto();
                         require $contenuto; ?>
-                    <?php include 'contenuto1.php'; ?>
-                    <p>contenuto2</p>
-                    <?php include 'contenuto1.php'; ?>
                 </div>
             </div>
             <?php include 'footer.php';?>
