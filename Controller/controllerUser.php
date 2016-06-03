@@ -50,8 +50,8 @@ class ControllerUser extends ControllerBase {
                     if(isset($request['nomeUtente'])){
                         $user->setNome($request['nomeUtente']);
                     }
-                    if(isset($request['conomeUtente'])){
-                        $user->setCognome($request['conomeUtente']);
+                    if(isset($request['cognomeUtente'])){
+                        $user->setCognome($request['cognomeUtente']);
                     }
                     if(isset($request['email'])){
                         $user->setEmail($request['email']);
