@@ -49,7 +49,7 @@ class User {
     
     public function __construct() {}
     
-    //Implemento i metodi get per tutte le variabili esclusa la password
+    //Implemento i metodi get per tutte le variabili 
     /**
      * restituisce username
      * @return string
@@ -99,6 +99,13 @@ class User {
      */
     public function getRuolo(){
         return $this->ruolo;
+    }
+    /**
+    * Restituisce la password dell'utente
+    * @return int
+    */
+    public function getPassword(){
+        return $this->password;
     }
 
     //Implemento i metodi set con relativi controlli servendomi della funzione filter_var

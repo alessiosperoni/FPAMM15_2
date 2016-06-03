@@ -273,13 +273,12 @@ class UserFactory {
      * @return int
      */
     public function salva(User $utente){
-        $mysqli = Database::getInstance()->connectDB();
+        $mysqli = Database::getInstance()->connectDb();
         if(!isset($mysqli)){
             error_log("Impossibile creare database ");
             $mysqli->close();
             return 0;
         }
-        
         $stmt = $mysqli->stmt_init();
         $conta=0;
         switch ($utente->getRuolo()) {
@@ -308,24 +307,24 @@ class UserFactory {
      */
     private function salvaUser(User $utente, mysqli_stmt $stmt){
         
-        $query= "update User set
+        $query= "update user set
                 nome = ?,
                 cognome = ?,
                 citta = ?, 
                 username = ?,
                 password = ?,
                 email = ?,
-                ruolo = ?,
-                where User.id = ?
+                ruolo = ?
+                where user.id = ?
                 ";
         $stmt->prepare($query);
         if(!$stmt){
             error_log("Impossibile inizializzare il prepared statement");
             return 0; 
         }
-        if(!$stmt->bind_param("ssssssii",
+        if(!$stmt->bind_param('ssssssii',
                 $utente->getNome(),
-                $utente->getCogname(),
+                $utente->getCognome(),
                 $utente->getCitta(),
                 $utente->getUsername(),
                 $utente->getPassword(),
@@ -370,11 +369,12 @@ class UserFactory {
         $stmt->prepare($query);
         if(!$stmt){
             error_log("Impossibile inizializzare il prepared statement");
+            
             return 0; 
         }
-        if(!$stmt->bind_param("ssssssiisisi",
+        if(!$stmt->bind_param('ssssssiisisi',
                 $utente->getNome(),
-                $utente->getCogname(),
+                $utente->getCognome(),
                 $utente->getCitta(),
                 $utente->getUsername(),
                 $utente->getPassword(),

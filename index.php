@@ -7,16 +7,13 @@
     
     date_default_timezone_set("Europe/Rome");
     FrontController::dispatch($_REQUEST);
-    echo 'debug';
     
     class FrontController{
         public static function dispatch(&$request){
-            //
             session_start();
             if(isset($request["page"])){
                 switch ($request["page"]) {
                     case "login":
-                        echo 'deb2';
                         $controllo = new ControllerBase();
                         $controllo->handleInput($request);
                         break;
@@ -36,7 +33,6 @@
                         break;
 
                     default:
-                        echo 'deb def';
                         break;
                 }
             }
