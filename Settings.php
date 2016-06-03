@@ -24,7 +24,7 @@ class Settings {
                     break;
                 case 'spano.sc.unica.it':
                     // configurazione pubblica
-                    self::$appPath = 'http://' . $_SERVER['HTTP_HOST'] . '/amm2015/speroniAlessio/FPAMM15_2/';
+                    self::$appPath = 'http://' . $_SERVER['HTTP_HOST'] . '/amm2015/speroniAlessio/FPAMM15_2/index.php';
                     break;
 
                 default:
