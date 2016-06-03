@@ -6,10 +6,10 @@
 class Settings {
 
     // variabili di accesso per il database
-    public static $db_host = 'localhost';
-    public static $db_user = 'root';
-    public static $db_password = 'alessio';
-    public static $db_name='easyparking';
+    public static $db_host = 'http://spano.sc.unica.it/phpmyadmin/';
+    public static $db_user = 'speroniAlessio';
+    public static $db_password = 'scorpione3318';
+    public static $db_name='amm15_speroniAlessio';
     
 
     private static $appPath='/amm2015/speroniAlessio/FPAMM15_2/';
