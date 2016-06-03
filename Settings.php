@@ -12,7 +12,7 @@ class Settings {
     public static $db_name='easyparking';
     
 
-    private static $appPath='/amm2015/speroniAlessio/';
+    private static $appPath='/amm2015/speroniAlessio/FPAMM15_2/';
 
     public static function getApplicationPath() {
         if (!isset(self::$appPath)) {
@@ -24,7 +24,7 @@ class Settings {
                     break;
                 case 'spano.sc.unica.it':
                     // configurazione pubblica
-                    self::$appPath = 'http://' . $_SERVER['HTTP_HOST'] . '/amm2015/speroniAlessio/';
+                    self::$appPath = 'http://' . $_SERVER['HTTP_HOST'] . '/amm2015/speroniAlessio/FPAMM15_2/';
                     break;
 
                 default:
