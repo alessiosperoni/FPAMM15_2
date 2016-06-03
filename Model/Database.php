@@ -18,7 +18,7 @@ class Database{
     
     public function connectDb(){
         $mysqli = new mysqli();
-        $mysqli->connect("spano.sc.unica.it/phpmyadmin/","speroniAlessio",
+        $mysqli->connect("spano.sc.unica.it/","speroniAlessio",
         "scorpione3318", "easyparking");
 
         if($mysqli->errno != 0){

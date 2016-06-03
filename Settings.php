@@ -6,7 +6,7 @@
 class Settings {
 
     // variabili di accesso per il database
-    public static $db_host = 'spano.sc.unica.it/phpmyadmin/';
+    public static $db_host = 'spano.sc.unica.it/';
     public static $db_user = 'speroniAlessio';
     public static $db_password = 'scorpione3318';
     public static $db_name='amm15_speroniAlessio';
