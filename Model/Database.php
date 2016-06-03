@@ -18,8 +18,8 @@ class Database{
     
     public function connectDb(){
         $mysqli = new mysqli();
-        $mysqli->connect("localhost","root",
-        "davide", "easyparking");
+        $mysqli->connect("http://spano.sc.unica.it/phpmyadmin/","speroniAlessio",
+        "scorpione3318", "easyparking");
 
         if($mysqli->errno != 0){
             return null;
