@@ -5,7 +5,7 @@ class ProdottoFactory{
     public function __construct() {
         
     }
-    public function instance($param) {
+    public function instance() {
         return new ProdottoFactory();
     }
     /**

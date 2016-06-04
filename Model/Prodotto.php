@@ -47,6 +47,34 @@ class Prodotto {
     //Costruttore
     public function __construct() {}
     
+    //implemento i set
+    public function setId($id) {
+        $this->id=$id;
+        return true;
+    }
+    public function setNome($nome) {
+        $this->nome=$nome;
+        return true;
+    }
+    public function setModello($modello) {
+        $this->modello=$modello;
+        return true;
+    }
+    public function setData($data) {
+        $this->data=$data;
+        return true;
+    }
+    public function setProduttore_id($produttore_id) {
+        $this->produttore_id=$produttore_id;
+        return true;
+    }
+    public function setDescrizione($descrizione) {
+        $this->descrizione=$descrizione;
+        return true;
+    }
+    
+    
+    
     //Implemento i metodi get per tutte le variabili 
     /**
      * restituisce nome
