@@ -2,8 +2,7 @@
     
     include_once 'Controller/controllerBase.php'; 
     include_once 'Controller/controllerUser.php'; 
-    
-    
+    include_once 'Controller/controllerDeveloper.php';    
     
     date_default_timezone_set("Europe/Rome");
     FrontController::dispatch($_REQUEST);
