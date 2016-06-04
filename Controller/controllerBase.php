@@ -3,6 +3,8 @@
 include_once basename(__DIR__) . '/../View/viewDescriptor.php';
 include_once basename(__DIR__) . '/../Model/User.php';
 include_once basename(__DIR__) . '/../Model/UserFactory.php';
+include_once basename(__DIR__) . '/../Model/Prodotto.php';
+include_once basename(__DIR__) . '/../Model/ProdottoFactory.php';
 
 /**
  * Controller che gestisce gli utenti non autenticati, 
