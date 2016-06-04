@@ -56,7 +56,7 @@ class ControllerUser extends ControllerBase {
                     if(isset($request['email'])){
                         $user->setEmail($request['email']);
                     }
-                    if (UserFactory::instance()->salva($user) != 1) {
+                    if (UserFactory::instance()->salva($user) == 0) {
                         echo '<p class="messaggio">Nessun dato aggiornato</p>';   
                     }
                     $this->showUserHome($vd);

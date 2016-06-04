@@ -54,10 +54,17 @@ class ControllerDeveloper extends ControllerUser {
                     if(isset($request['email'])){
                         $user->setEmail($request['email']);
                     }
-                    if (UserFactory::instance()->salva($user) != 1) {
+                    if (UserFactory::instance()->salva($user) == 0) {
                         echo '<p class="messaggio">Nessun dato aggiornato</p>';   
                     }
                     $this->showDeveloperHome($vd);
+                    break;
+                case 'newProdotto':
+                    $this->showCreaProdotto($vd);
+                    break;
+                case 'addCode':
+                    $prodotto = ProdottoFactory::instance()->creaProdotto($request);
+                    $this->showProdotto($vd);
                     break;
                 default : $this->showDeveloperHome($vd);
             }
@@ -74,7 +81,7 @@ class ControllerDeveloper extends ControllerUser {
         
     }
     protected function showDeveloperHome($vd){
-        $vd->setTitolo("Home Utente");
+        $vd->setTitolo("Home Sviluppatore");
         $vd->setContenuto('Developer/contenutoDatiSviluppatore.php');
         $vd->setFooter('footer.php');
         $vd->setSocial('social.php');
@@ -82,7 +89,7 @@ class ControllerDeveloper extends ControllerUser {
         $vd->setNavigation('Developer/Navigation.php');
     } 
     protected function showModificaDati($vd){
-        $vd->setTitolo("Modifica dati utente");
+        $vd->setTitolo("Modifica dati sviluppatore");
         $vd->setContenuto('Developer/formModificaDati.php');
         $vd->setFooter('footer.php');
         $vd->setSocial('social.php');
