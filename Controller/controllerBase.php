@@ -59,7 +59,11 @@ class ControllerBase {
         } else {
             if ($this->loggedIn()) {
                 $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::ruolo]);
-                $this->showUserHome($vd);
+                if($user->getRuolo()=User::User){
+                    $this->showUserHome($vd);
+                } else {
+                    $this->showDeveloperHome($vd);
+                }
             } else {
              
                 $this->showLogin($vd);
@@ -98,6 +102,15 @@ class ControllerBase {
         $vd->setNavigation('Navigation.php');
     }  
     
+    protected function showDeveloperHome($vd){
+        $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::ruolo]);
+        $vd->setTitolo("Home Sviluppatore");
+        $vd->setContenuto('Developer/contenutoDatiSviluppaotre.php');
+        $vd->setFooter('footer.php');
+        $vd->setSocial('social.php');
+        $vd->setHeader('header.php');
+        $vd->setNavigation('Developer/Navigation.php');
+    } 
     protected function showUserHome($vd){
         $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::ruolo]);
         $vd->setTitolo("Home Utente");
@@ -106,7 +119,7 @@ class ControllerBase {
         $vd->setSocial('social.php');
         $vd->setHeader('header.php');
         $vd->setNavigation('User/Navigation.php');
-    }  
+    } 
     
     
     public function login($vd, $username, $password){
