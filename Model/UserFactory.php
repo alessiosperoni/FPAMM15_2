@@ -344,11 +344,11 @@ class UserFactory {
     
     /**
      * Funzione specifica modifiche Developer
-     * @param User $utente
+     * @param Developer $utente
      * @param mysqli_stmt $stmt
      * @return int
      */
-    private function salvaDeveloper(Developer $Developer, mysqli_stmt $stmt){
+    private function salvaDeveloper(Developer $utente, mysqli_stmt $stmt){
         
         $query= "update user set
                 nome = ?,
