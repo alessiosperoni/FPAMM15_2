@@ -83,8 +83,8 @@ class ProdottoFactory{
     public function creaProdotto($row) {
         
         $prodotto = new Prodotto();
-        $prodotto->setNome($row['nome']);
-        $prodotto->setModello($row['modello']);
+        $prodotto->setNome($row['nomeProdotto']);
+        $prodotto->setModello($row['modelloProdotto']);
         $prodotto->setData($row['data']);
         $prodotto->setProduttore_id($row['produttore_id']);
         $prodotto->setDescrizione($row['Descrizione']);        
