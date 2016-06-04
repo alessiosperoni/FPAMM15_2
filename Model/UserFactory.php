@@ -371,8 +371,8 @@ class UserFactory {
             error_log("Impossibile inizializzare il prepared statement");
             
             return 0; 
-        }
-        if(!$stmt->bind_param('ssssssiisisi',
+        }//sisi
+        if(!$stmt->bind_param('ssssssii',
                 $utente->getNome(),
                 $utente->getCognome(),
                 $utente->getCitta(),
