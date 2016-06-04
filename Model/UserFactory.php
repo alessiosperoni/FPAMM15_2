@@ -358,14 +358,14 @@ class UserFactory {
                 password = ?,
                 email = ?,
                 ruolo = ?
-                where user.id = ?;
-
+                where user.id = ?;"
+/*
                 update developer set 
                 provincia = ?,
                 CAP = ?,
                 via = ?
-                where developer.id = ?
-                ";
+                where developer.id = ?*/
+                ;
         $stmt->prepare($query);
         if(!$stmt){
             error_log("Impossibile inizializzare il prepared statement");
@@ -380,11 +380,11 @@ class UserFactory {
                 $utente->getPassword(),
                 $utente->getEmail(),
                 $utente->getRuolo(),
-                $utente->getId(),
-                $utente->getProvincia(),
-                $utente->getCAP(),
-                $utente->getVia(),
-                $utente->getId()
+                $utente->getId()//,
+                //$utente->getProvincia(),
+                //$utente->getCAP(),
+                //$utente->getVia(),
+                //$utente->getId()
                 )){
             error_log("binding in input fallito");
             return 0;
