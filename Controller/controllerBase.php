@@ -105,7 +105,7 @@ class ControllerBase {
     protected function showDeveloperHome($vd){
         $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::ruolo]);
         $vd->setTitolo("Home Sviluppatore");
-        $vd->setContenuto('Developer/contenutoDatiSviluppaotre.php');
+        $vd->setContenuto('Developer/contenutoDatiSviluppatore.php');
         $vd->setFooter('footer.php');
         $vd->setSocial('social.php');
         $vd->setHeader('header.php');
@@ -128,7 +128,11 @@ class ControllerBase {
         if (isset($user) && $user->esiste()) {
             $_SESSION[self::user] = $user->getId();
             $_SESSION[self::ruolo] = $user->getRuolo();
-            $this->showUserHome($vd);
+            if($user->getRuolo()==User::User){
+                    $this->showUserHome($vd);
+                } else {
+                    $this->showDeveloperHome($vd);
+                }
         }else{
             echo 'Nome utente o Password errati, riprovare';
             $this->showLogin($vd);
