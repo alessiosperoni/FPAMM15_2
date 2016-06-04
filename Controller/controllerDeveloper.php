@@ -20,10 +20,10 @@ class ControllerDeveloper extends ControllerUser {
             
             switch ($request["cmd"]) {
                 // richiesta di login 
-                case 'homeUser':
+                case 'homeDeveloper':
                     if($this->loggedIn()) {
                         $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::ruolo]);
-                        $this->showUserHome($vd);
+                        $this->showDeveloperHome($vd);
                     }
                     else {
                         $this->showLogin($vd);
@@ -33,7 +33,7 @@ class ControllerDeveloper extends ControllerUser {
                         $this->login($vd, $username, $password);
                         if($this->loggedIn()) {
                             $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::ruolo]);
-                            $this->showUserHome($vd);
+                            $this->showDeveloperHome($vd);
                         }
                     }
                     break;
@@ -57,12 +57,9 @@ class ControllerDeveloper extends ControllerUser {
                     if (UserFactory::instance()->salva($user) != 1) {
                         echo '<p class="messaggio">Nessun dato aggiornato</p>';   
                     }
-                    $this->showUserHome($vd);
+                    $this->showDeveloperHome($vd);
                     break;
-                case 'index.php?user=homeUser':
-                    $this->showUserHome($vd);
-                    break;
-                default : $this->showUserHome($vd);
+                default : $this->showDeveloperHome($vd);
             }
         } else {
             if ($this->loggedIn()) {
@@ -76,21 +73,21 @@ class ControllerDeveloper extends ControllerUser {
         require  basename(__DIR__).'/../View/master.php';
         
     }
-    protected function showUserHome($vd){
+    protected function showDeveloperHome($vd){
         $vd->setTitolo("Home Utente");
-        $vd->setContenuto('User/contenutoDatiUtente.php');
+        $vd->setContenuto('Developer/contenutoDatiSviluppatore.php');
         $vd->setFooter('footer.php');
         $vd->setSocial('social.php');
         $vd->setHeader('header.php');
-        $vd->setNavigation('User/Navigation.php');
+        $vd->setNavigation('Developer/Navigation.php');
     } 
     protected function showModificaDati($vd){
         $vd->setTitolo("Modifica dati utente");
-        $vd->setContenuto('User/formModificaDati.php');
+        $vd->setContenuto('Developer/formModificaDati.php');
         $vd->setFooter('footer.php');
         $vd->setSocial('social.php');
         $vd->setHeader('header.php');
-        $vd->setNavigation('User/Navigation.php');
+        $vd->setNavigation('Developer/Navigation.php');
     } 
     
 }

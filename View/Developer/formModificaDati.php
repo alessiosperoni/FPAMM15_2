@@ -1,5 +1,5 @@
 <div class="input-form">
-    <form method="post" action="index.php?page=user&cmd=modifica">
+    <form method="post" action="index.php?page=developer&cmd=modifica">
         <input type="hidden" name="user" value="<?=$user->getId()?>"/>
         <label for="Nome Utente">Nome</label>
         <input type="text" name="nomeUtente" id="nomeUtente" value="<?= $user->getNome() ?>"/>

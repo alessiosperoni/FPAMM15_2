@@ -25,7 +25,7 @@
                         $controllo->handleInput($request);
                         break;
                     case "developer":
-                        $controllo = new ControlloDeveloper();
+                        $controllo = new ControllerDeveloper();
                         if (isset($_SESSION[ControllerBase::ruolo]) 
                             && $_SESSION[ControllerBase::ruolo] 
                             != User::Developer){}
