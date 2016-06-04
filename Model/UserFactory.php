@@ -358,20 +358,13 @@ class UserFactory {
                 password = ?,
                 email = ?,
                 ruolo = ?
-                where user.id = ?;"
-/*
-                update developer set 
-                provincia = ?,
-                CAP = ?,
-                via = ?
-                where developer.id = ?*/
-                ;
+                where user.id = ?;";
+        
         $stmt->prepare($query);
         if(!$stmt){
             error_log("Impossibile inizializzare il prepared statement");
-            
             return 0; 
-        }//sisi
+        }
         if(!$stmt->bind_param('ssssssii',
                 $utente->getNome(),
                 $utente->getCognome(),
@@ -380,11 +373,7 @@ class UserFactory {
                 $utente->getPassword(),
                 $utente->getEmail(),
                 $utente->getRuolo(),
-                $utente->getId()//,
-                //$utente->getProvincia(),
-                //$utente->getCAP(),
-                //$utente->getVia(),
-                //$utente->getId()
+                $utente->getId()
                 )){
             error_log("binding in input fallito");
             return 0;
@@ -393,6 +382,32 @@ class UserFactory {
             error_log("fallita esecuzione statement");
             return 0;
         }
+        
+        $query = "update developer set 
+                provincia = ?,
+                CAP = ?,
+                via = ?
+                where developer.id = ?";
+        $stmt->prepare($query);
+        if(!$stmt){
+            error_log("Impossibile inizializzare il prepared statement");
+            return 0; 
+        }
+        
+        if(!$stmt->bind_param('sisi',
+                $utente->getProvincia(),
+                $utente->getCAP(),
+                $utente->getVia(),
+                $utente->getId()
+                )){
+            error_log("binding in input fallito");
+            return 0;
+        }
+        if(!$stmt->execute()){
+            error_log("fallita esecuzione statement");
+            return 0;
+        }
+        
         return $stmt->affected_rows;
     }
     
