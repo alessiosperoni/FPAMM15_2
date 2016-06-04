@@ -59,7 +59,7 @@ class ControllerBase {
         } else {
             if ($this->loggedIn()) {
                 $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::ruolo]);
-                if($user->getRuolo()=User::User){
+                if($user->getRuolo()==User::User){
                     $this->showUserHome($vd);
                 } else {
                     $this->showDeveloperHome($vd);
