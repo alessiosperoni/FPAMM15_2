@@ -87,7 +87,7 @@ class ProdottoFactory{
         $prodotto->setModello($row['modelloProdotto']);
         $prodotto->setData($row['data']);
         $prodotto->setProduttore_id($row['produttore_id']);
-        $prodotto->setDescrizione($row['Descrizione']);        
+        $prodotto->setDescrizione($row['descrizione']);        
         
         return $prodotto;
     }
