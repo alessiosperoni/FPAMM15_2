@@ -95,6 +95,22 @@ class ControllerDeveloper extends ControllerUser {
         $vd->setSocial('social.php');
         $vd->setHeader('header.php');
         $vd->setNavigation('Developer/Navigation.php');
+    }  
+    protected function showCreaProdotto($vd){
+        $vd->setTitolo("Crea Nuovo Prodotto");
+        $vd->setContenuto('Developer/addProdotto.php');
+        $vd->setFooter('footer.php');
+        $vd->setSocial('social.php');
+        $vd->setHeader('header.php');
+        $vd->setNavigation('Developer/Navigation.php');
+    } 
+    protected function showProdotto($vd){
+        $vd->setTitolo("Prodotto");
+        $vd->setContenuto('Developer/contenutoProdotto.php');
+        $vd->setFooter('footer.php');
+        $vd->setSocial('social.php');
+        $vd->setHeader('header.php');
+        $vd->setNavigation('Developer/Navigation.php');
     } 
     
 }

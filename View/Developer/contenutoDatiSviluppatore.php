@@ -1,5 +1,5 @@
 
-<h2>Dati utente:</h2>
+<h2>Dati sviluppatore:</h2>
 <p>
 <?php 
     echo 'Nome utente: &nbsp;&nbsp;';
