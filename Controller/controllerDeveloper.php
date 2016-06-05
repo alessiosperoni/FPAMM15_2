@@ -63,7 +63,8 @@ class ControllerDeveloper extends ControllerUser {
                     break;
                 case 'newProdotto':
                     $this->showCreaProdotto($vd);
-                    $prodotto = ProdottoFactory::instance()->creaProdotto($request);
+                    if(isset($request['addProdotto'])){
+                    $prodotto = ProdottoFactory::instance()->creaProdotto($request);}
                     break;
                 case 'addCode':
                     
