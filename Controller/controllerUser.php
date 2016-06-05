@@ -64,6 +64,9 @@ class ControllerUser extends ControllerBase {
                 case 'index.php?user=homeUser':
                     $this->showUserHome($vd);
                     break;
+                case 'chiSiamo':
+                    $this->showChiSiamo($vd);
+                    break;
                 default : $this->showUserHome($vd);
             }
         } else {
@@ -71,12 +74,10 @@ class ControllerUser extends ControllerBase {
                 $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::ruolo]);
                 $this->showUserHome($vd);
             } else {
-             
                 $this->showLogin($vd);
             }
         }
         require  basename(__DIR__).'/../View/master.php';
-        
     }
     protected function showUserHome($vd){
         $vd->setTitolo("Home Utente");
@@ -94,5 +95,12 @@ class ControllerUser extends ControllerBase {
         $vd->setHeader('header.php');
         $vd->setNavigation('User/Navigation.php');
     } 
-    
+    protected function showChiSiamo($vd) {
+        $vd->setTitolo("Chi siamo");
+        $vd->setContenuto('chiSiamo.php');
+        $vd->setFooter('footer.php');
+        $vd->setSocial('social.php');
+        $vd->setHeader('header.php');
+        $vd->setNavigation('Navigation.php');
+    }
 }

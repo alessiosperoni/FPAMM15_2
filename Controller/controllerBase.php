@@ -56,6 +56,9 @@ class ControllerBase {
                 case 'logout':
                     $this->logout($vd);
                     break;
+                case 'chiSiamo':
+                    $this->showChiSiamo($vd);
+                    break;
                 default : $this->showLogin($vd);
             }
         } else {
@@ -123,6 +126,15 @@ class ControllerBase {
         $vd->setNavigation('User/Navigation.php');
     } 
     
+    protected function showChiSiamo($vd) {
+        $vd->setTitolo("Chi siamo");
+        $vd->setContenuto('login/formLogin.php');
+        $vd->setContenuto2('chiSiamo.php');
+        $vd->setFooter('footer.php');
+        $vd->setSocial('social.php');
+        $vd->setHeader('header.php');
+        $vd->setNavigation('Navigation.php');
+    }
     
     public function login($vd, $username, $password){
         

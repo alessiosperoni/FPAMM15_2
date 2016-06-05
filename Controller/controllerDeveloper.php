@@ -62,11 +62,14 @@ class ControllerDeveloper extends ControllerUser {
                 case 'newProdotto':
                     $this->showCreaProdotto($vd);
                     $prodotto = ProdottoFactory::instance()->creaProdotto($request);
-                    
+                
                     break;
                 case 'addCode':
                     $prodotto = ProdottoFactory::instance()->creaProdotto($request);
                     $this->showProdotto($vd);
+                    break;
+                case 'chiSiamo':
+                    $this->showChiSiamo($vd);
                     break;
                 default : $this->showDeveloperHome($vd);
             }
@@ -114,5 +117,13 @@ class ControllerDeveloper extends ControllerUser {
         $vd->setHeader('header.php');
         $vd->setNavigation('Developer/Navigation.php');
     } 
+    protected function showChiSiamo($vd) {
+        $vd->setTitolo("Chi siamo");
+        $vd->setContenuto('chiSiamo.php');
+        $vd->setFooter('footer.php');
+        $vd->setSocial('social.php');
+        $vd->setHeader('header.php');
+        $vd->setNavigation('Navigation.php');
+    }
     
 }

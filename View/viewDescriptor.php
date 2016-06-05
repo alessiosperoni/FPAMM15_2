@@ -5,42 +5,35 @@ class viewDescriptor {
     private $social;
     private $header;
     private $Navigation;
-    private $contenuti;
     private $contenuto;
     private $footer;
     private $titolo;
     private $token;
     private $pagina;
-    private $sottoPagina;
+    private $contenuto2;
     
     const get = 'get';
     const post = 'post';
     public function __construct(){
-        $this->contenuti = array();
     }
     //Metodi get
     public function getSocial(){return $this->social;}
     public function getHeader(){return $this->header;}
     public function getNavigation(){return $this->Navigation;}
-    public function getContenuti(){return $this->contenuti;}
     public function getContenuto(){return $this->contenuto;}
     public function getTitolo(){return $this->titolo;}
     public function getFooter(){return $this->footer;}
     public function getPagina(){return $this->pagina;}
-    public function getSottoPagina(){return $this->SottoPagina;}
+    public function getContenuto2(){return $this->contenuto2;}
     //Metodi set
     public function setSocial($social){$this->social=$social;}
     public function setHeader($header){$this->header=$header;}
     public function setNavigation($navigation){$this->Navigation=$navigation;}
-    public function setContenuti($contenuti){$this->contenuti=$contenuti;}
     public function setContenuto($contenuto){$this->contenuto=$contenuto;}
     public function setTitolo($titolo){$this->titolo=$titolo;}
     public function setFooter($footer){$this->footer=$footer;}
     public function setPagina($pagina){$this->pagina=$pagina;}
-    public function setSottoPagina($SottoPagina){$this->pagina=$SottoPagina;}
-    
-    //Add content
-    public function addContenuto($contenuto, $i){$this->contenuti[$i]=$contenuto;}
+    public function setContenuto2($contenuto2){$this->contenuto2=$contenuto2;}
     
     public function setToken($token){$this->token=$token;}
 
