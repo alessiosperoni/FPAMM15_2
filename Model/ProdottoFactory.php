@@ -84,7 +84,9 @@ class ProdottoFactory{
         echo 'Sono in creaProdotto';
         $prodotto = new Prodotto();
         if(isset($request['nomeProdotto'])){
-        $prodotto->setNome($request['nomeProdotto']);}
+        $prodotto->setNome($request['nomeProdotto']);}else{
+            $prodotto->setNome('');
+        }
         if(isset($request['modelloProdotto'])){
         $prodotto->setModello($request['modelloProdotto']);}
         if(isset($request['data'])){
