@@ -3,6 +3,8 @@
 include_once 'controllerBase.php';
 
 class ControllerDeveloper extends ControllerUser {
+    static $idProdotto=1;
+    
     public function __construct() {
         parent::__construct();
     }
@@ -62,10 +64,10 @@ class ControllerDeveloper extends ControllerUser {
                 case 'newProdotto':
                     $this->showCreaProdotto($vd);
                     $prodotto = ProdottoFactory::instance()->creaProdotto($request);
-                
+                    $idProdotto= $prodotto->getId();
                     break;
                 case 'addCode':
-                    //$prodotto = ProdottoFactory::instance()->creaProdotto($request);
+                    $prodotto = ProdottoFactory::instance()->cercaProdottoPerId($idProdotto);
                     $this->showProdotto($vd);
                     break;
                 case 'chiSiamo':
