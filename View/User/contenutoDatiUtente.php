@@ -8,8 +8,8 @@
     echo 'Cognome utente:&nbsp;&nbsp; ';
     echo $user->getCognome();
     echo '</br>';
-    echo 'Ruolo: 1=user 2=developer: &nbsp;&nbsp;';
-    echo $user->getRuolo();
+    echo 'Ruolo: &nbsp;&nbsp;';
+    if($user->getRuolo==1) {echo 'User';}else{echo 'Sviluppatore';}
     echo '</br>';
     echo 'Username: &nbsp;&nbsp;';
     echo $user->getUsername();
