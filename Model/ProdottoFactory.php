@@ -83,7 +83,6 @@ class ProdottoFactory{
     public function creaProdotto($request) {
         echo 'Sono in creaProdotto';
         $prodotto = new Prodotto();
-        //if(isset($request['addCode']))
         $prodotto->setNome($row['nomeProdotto']);
         $prodotto->setModello($row['modelloProdotto']);
         $prodotto->setData($row['data']);
