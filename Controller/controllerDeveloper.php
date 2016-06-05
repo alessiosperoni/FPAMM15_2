@@ -64,10 +64,11 @@ class ControllerDeveloper extends ControllerUser {
                 case 'newProdotto':
                     $this->showCreaProdotto($vd);
                     $prodotto = ProdottoFactory::instance()->creaProdotto($request);
-                    $idProdotto= $prodotto->getId();
+                    ProdottoFactory::instance()->salva($prodotto);
+                    ControllerDeveloper::$idProdotto=$prodotto->getId();
                     break;
                 case 'addCode':
-                    $prodotto = ProdottoFactory::instance()->cercaProdottoPerId($idProdotto);
+                    $prodotto = ProdottoFactory::instance()->cercaProdottoPerId(ControllerDeveloper::$idProdotto);
                     $this->showProdotto($vd);
                     break;
                 case 'chiSiamo':
