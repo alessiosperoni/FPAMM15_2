@@ -1,5 +1,5 @@
 <div class="input-form">
-    <form method="post" action="index.php?page=developer&cmd=newProdotto">
+    <form method="post" action="index.php?page=developer&cmd=addCode">
         <input type="hidden" name="user" value="<?=$prodotto->getId()?>"/>
         <label for="Nome prodotto">Nome</label>
         <input type="text" name="nomeProdotto" id="nomeProdotto" value="<?= $prodotto->getNome() ?>"/>
