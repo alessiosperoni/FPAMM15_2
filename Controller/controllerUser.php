@@ -101,6 +101,6 @@ class ControllerUser extends ControllerBase {
         $vd->setFooter('footer.php');
         $vd->setSocial('social.php');
         $vd->setHeader('header.php');
-        $vd->setNavigation('Navigation.php');
+        $vd->setNavigation('User/Navigation.php');
     }
 }

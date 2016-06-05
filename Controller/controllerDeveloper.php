@@ -123,7 +123,7 @@ class ControllerDeveloper extends ControllerUser {
         $vd->setFooter('footer.php');
         $vd->setSocial('social.php');
         $vd->setHeader('header.php');
-        $vd->setNavigation('Navigation.php');
+        $vd->setNavigation('Developer/Navigation.php');
     }
     
 }
