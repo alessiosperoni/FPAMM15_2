@@ -9,7 +9,7 @@
     echo $user->getCognome();
     echo '</br>';
     echo 'Ruolo: &nbsp;&nbsp;';
-    if($user->getRuolo==1) {echo 'User';}else{echo 'Sviluppatore';}
+    if($user->getRuolo()==1) {echo 'User';}else{echo 'Sviluppatore';}
     echo '</br>';
     echo 'Username: &nbsp;&nbsp;';
     echo $user->getUsername();
