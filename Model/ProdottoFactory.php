@@ -124,7 +124,7 @@ class ProdottoFactory{
         $bind = $stmt->bind_result(
                 $row['max(id)']);
         $prodotto->setId($row['max(id)']+1);
-        
+        echo $prodotto->getId();
         $query = "INSERT INTO `Prodotto`
                 (`id`, `nome`, `modello`, `data`, `produttore_id`, `descrizione`) 
                 VALUES (?,?,?,?,?,?);";
@@ -133,7 +133,7 @@ class ProdottoFactory{
             error_log("Impossibile inizializzare il prepared statement");
             return 0; 
         }        
-        if(!$stmt->bind_param('issdis',
+        if(!$stmt->bind_param('isssis',
                 $prodotto->getId(),
                 $prodotto->getNome(),
                 $prodotto->getModello(),
