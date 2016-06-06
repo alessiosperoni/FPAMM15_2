@@ -62,12 +62,12 @@ class ControllerDeveloper extends ControllerUser {
                     $this->showDeveloperHome($vd);
                     break;
                 case 'newProdotto':
+                    $prodotto = new Prodotto();
                     $this->showCreaProdotto($vd);
                     //echo 'deb1: pre creaProdotto___';
                     //echo $request['nomeProdotto'];
                     //if(isset($request['nomeProdotto'])){
                     //$prodotto = ProdottoFactory::instance()->creaProdotto($request);//}
-                    $prodotto = new Prodotto();
                     //echo 'deb2: post creaProdotto___';
                     break;
                 case 'addCode':

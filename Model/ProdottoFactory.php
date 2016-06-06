@@ -154,7 +154,7 @@ class ProdottoFactory{
             return 0;
         }
         if (!$stmt->fetch()) {
-            return null;
+            return 0;
         }
         $stmt->close();
         $mysqli->close();
