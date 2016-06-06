@@ -123,10 +123,10 @@ class ProdottoFactory{
         $row = array();
         $bind = $stmt->bind_result(
                 $row['massimo']);
-        $prodotto->setId($row['massimo']+1);
+        $prodotto->setId($bind+1);
         echo $prodotto->getId();
         echo '_maxId=';
-        echo $row['massimo'];
+        echo $bind;
         $query = "INSERT INTO `Prodotto`
                 (`id`, `nome`, `modello`, `data`, `produttore_id`, `descrizione`) 
                 VALUES (?,?,?,?,?,?);";
