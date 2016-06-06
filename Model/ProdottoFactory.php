@@ -126,10 +126,10 @@ class ProdottoFactory{
         if (!$stmt->fetch()) {
             return null;
         }
-        $prodotto->setId($bind+1);
+        $prodotto->setId($bind[0]+1);
         echo $prodotto->getId();
         echo '_maxId=';
-        echo $bind;
+        echo $bind[0];
         $query = "INSERT INTO `Prodotto`
                 (`id`, `nome`, `modello`, `data`, `produttore_id`, `descrizione`) 
                 VALUES (?,?,?,?,?,?);";
