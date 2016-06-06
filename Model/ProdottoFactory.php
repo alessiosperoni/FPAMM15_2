@@ -101,7 +101,7 @@ class ProdottoFactory{
      * @return int
      */
     public function salva(Prodotto $prodotto){
-        echo 'Im trying to saving';
+        echo 'Im trying to saving_idProdotto=';
         $mysqli = Database::getInstance()->connectDb();
         if(!isset($mysqli)){
             error_log("Impossibile creare database ");
@@ -110,7 +110,7 @@ class ProdottoFactory{
         }
         $stmt = $mysqli->stmt_init();
         
-        $query = "select max(id) from Prodotto;";
+        $query = "select max(id) massimo from Prodotto;";
         $stmt->prepare($query);
         if(!$stmt){
             error_log("Impossibile inizializzare il prepared statement");
@@ -122,9 +122,11 @@ class ProdottoFactory{
         }
         $row = array();
         $bind = $stmt->bind_result(
-                $row['max(id)']);
-        $prodotto->setId($row['max(id)']+1);
+                $row['massimo']);
+        $prodotto->setId($row['massimo']+1);
         echo $prodotto->getId();
+        echo '_maxId=';
+        echo $row['massimo'];
         $query = "INSERT INTO `Prodotto`
                 (`id`, `nome`, `modello`, `data`, `produttore_id`, `descrizione`) 
                 VALUES (?,?,?,?,?,?);";
