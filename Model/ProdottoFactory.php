@@ -30,8 +30,7 @@ class ProdottoFactory{
         Prodotto.modello modello,
         Prodotto.data data,
         Prodotto.produttore_id produttore_id,
-        Prodotto.descrizione descrizione,
-        developer.CAP
+        Prodotto.descrizione descrizione
         from Prodotto
         where Prodotto.id = ?";
 
