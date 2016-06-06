@@ -67,6 +67,15 @@ class ControllerUser extends ControllerBase {
                 case 'chiSiamo':
                     $this->showChiSiamo($vd);
                     break;
+                case 'scegliProdotto':
+                    $this->setProdotto($vd);
+                    break;
+                case 'prodotto':
+                    if(!isset($request['id'])){error_log("id Non Valido");}else{
+                    $prodotto = ProdottoFactory::instance()->cercaProdottoPerId($request['id']);}
+                    if(!isset($prodotto)){$this->setProdotto($vd);}else{
+                    $this->showProdotto($vd);}
+                    break;
                 default : $this->showUserHome($vd);
             }
         } else {
@@ -111,4 +120,12 @@ class ControllerUser extends ControllerBase {
         $vd->setHeader('header.php');
         $vd->setNavigation('User/Navigation.php');
     } 
+    protected function showProdotto($vd){
+        $vd->setTitolo("Prodotto");
+        $vd->setContenuto('Developer/contenutoProdotto.php');
+        $vd->setFooter('footer.php');
+        $vd->setSocial('social.php');
+        $vd->setHeader('header.php');
+        $vd->setNavigation('User/Navigation.php');
+    }
 }
