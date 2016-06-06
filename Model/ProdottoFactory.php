@@ -139,7 +139,7 @@ class ProdottoFactory{
             error_log("Impossibile inizializzare il prepared statement");
             return 0; 
         }        
-        if(!$stmt->bind_param('isssis',
+        if(!$stmt->bind_param('issiis',
                 $prodotto->getId(),
                 $prodotto->getNome(),
                 $prodotto->getModello(),

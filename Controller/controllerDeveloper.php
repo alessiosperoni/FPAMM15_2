@@ -84,7 +84,9 @@ class ControllerDeveloper extends ControllerUser {
                 case 'prodotto':
                     if(!isset($request['id'])){error_log("id Non Valido");}else{
                     $prodotto = ProdottoFactory::instance()->cercaProdottoPerId($request['id']);}
-                    if(!isset($prodotto)){$this->setProdotto($vd);}else{
+                    if(!isset($prodotto)){
+                        echo 'Errore, prodotto inesistente';
+                        $this->setProdotto($vd);}else{
                     $this->showProdotto($vd);}
                     break;
                 case 'chiSiamo':
