@@ -121,18 +121,16 @@ class ProdottoFactory{
             return 0;
         }
         $row = array();
-        //echo '___stampa row___';
-        $bind = $stmt->bind_result(
-                $row['massimo']);
-        if(!$bind){echo '--ERR--';}
-        echo $row['massimo'];
+        $intero=0;
+        $bind = $stmt->bind_result($intero);
+        echo $intero;
         if (!$stmt->fetch()) {
             return null;
         }
-        $prodotto->setId($bind+1);
+        $prodotto->setId($intero+1);
         echo $prodotto->getId();
         echo '_maxId=';
-        echo $bind;
+        echo $intero;
         $stmt->close();
         $mysqli->close();
         
