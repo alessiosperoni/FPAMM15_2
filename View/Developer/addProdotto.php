@@ -18,7 +18,7 @@
         <br/>
         
         <div class="save">
-            <button type="submit" name="cmd" value="newProdotto">Salva</button>
+            <button type="submit" name="cmd" value="addCode">Salva</button>
         </div>
     </form>
 </div>
