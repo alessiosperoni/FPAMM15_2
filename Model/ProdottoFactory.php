@@ -122,9 +122,9 @@ class ProdottoFactory{
         }
         $row = array();
         echo '___stampa row___';
-        echo $row['massimo'];
         $bind = $stmt->bind_result(
                 $row['massimo']);
+        echo $row['massimo'];
         if (!$stmt->fetch()) {
             return null;
         }
