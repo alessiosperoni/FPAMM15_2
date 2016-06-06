@@ -121,15 +121,17 @@ class ProdottoFactory{
             return 0;
         }
         $row = array();
+        echo '___stampa row___';
+        echo $row['massimo'];
         $bind = $stmt->bind_result(
                 $row['massimo']);
         if (!$stmt->fetch()) {
             return null;
         }
-        $prodotto->setId($bind[0]+1);
+        $prodotto->setId($bind[1]+1);
         echo $prodotto->getId();
         echo '_maxId=';
-        echo $bind[0];
+        echo $bind[1];
         $query = "INSERT INTO `Prodotto`
                 (`id`, `nome`, `modello`, `data`, `produttore_id`, `descrizione`) 
                 VALUES (?,?,?,?,?,?);";
