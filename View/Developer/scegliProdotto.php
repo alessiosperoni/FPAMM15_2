@@ -2,7 +2,7 @@
     <div class="input-form">
     
     <form method="post" action="index.php?page=developer&cmd=scegliProdotto">
-        <input type="hidden" name="cmd" value="scelta"/>
+        <input type="hidden" name="cmd" value="prodotto"/>
         
         <label for="id">Id del prodotto</label>
         <input type="int" name="id" id="user"/>
