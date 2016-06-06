@@ -82,9 +82,9 @@ class ProdottoFactory{
     public function creaProdotto($request) {
         $prodotto = new Prodotto();
         //if(isset($request['nomeProdotto'])){
-        $prodotto->setNome($request['nomeProdotto']);//}
+        $prodotto->setNome($request['nome']);//}
         //if(isset($request['modelloProdotto'])){
-        $prodotto->setModello($request['modelloProdotto']);//}
+        $prodotto->setModello($request['modello']);//}
         //if(isset($request['data'])){
         $prodotto->setData($request['data']);//}
         //if(isset($request['produttore_id'])){
