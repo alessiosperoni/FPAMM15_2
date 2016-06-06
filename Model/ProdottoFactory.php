@@ -108,14 +108,14 @@ class ProdottoFactory{
             $mysqli->close();
             return 0;
         }
-        $stmt = $mysqli->stmt_init();
-        
         $query = "select max(id) massimo from Prodotto;";
+        $stmt = $mysqli->stmt_init();
         $stmt->prepare($query);
         if(!$stmt){
             error_log("Impossibile inizializzare il prepared statement");
             return 0; 
-        }
+        }/**********************************************************************************************************/
+        
         if(!$stmt->execute()){
             error_log("fallita esecuzione statement");
             return 0;
