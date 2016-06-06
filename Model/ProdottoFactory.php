@@ -97,7 +97,7 @@ class ProdottoFactory{
     
     /**
      * Funzione principale salvataggio prodotto
-     * @param User $utente
+     * @param Prodotto $prodotto
      * @return int
      */
     public function salva(Prodotto $prodotto){
@@ -114,17 +114,17 @@ class ProdottoFactory{
         if(!$stmt){
             error_log("Impossibile inizializzare il prepared statement");
             return 0; 
-        }/**********************************************************************************************************/
-        
+        }
+        /**********************************************************************************************************/
         if(!$stmt->execute()){
             error_log("fallita esecuzione statement");
             return 0;
         }
         $row = array();
-        echo '___stampa row___';
+        //echo '___stampa row___';
         $bind = $stmt->bind_result(
                 $row['massimo']);
-        echo $row['massimo'];
+        //echo $row['massimo'];
         if (!$stmt->fetch()) {
             return null;
         }
