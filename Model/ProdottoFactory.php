@@ -83,18 +83,16 @@ class ProdottoFactory{
     public function creaProdotto($request) {
         echo 'Sono in creaProdotto';
         $prodotto = new Prodotto();
-        if(isset($request['nomeProdotto'])){
-        $prodotto->setNome($request['nomeProdotto']);}else{
-            $prodotto->setNome('');
-        }
-        if(isset($request['modelloProdotto'])){
-        $prodotto->setModello($request['modelloProdotto']);}
-        if(isset($request['data'])){
-        $prodotto->setData($request['data']);}
-        if(isset($request['produttore_id'])){
-        $prodotto->setProduttore_id($request['produttore_id']);}
-        if(isset($request['descrizione'])){
-        $prodotto->setDescrizione($request['descrizione']); }
+        //if(isset($request['nomeProdotto'])){
+        $prodotto->setNome($request['nomeProdotto']);//}
+        //if(isset($request['modelloProdotto'])){
+        $prodotto->setModello($request['modelloProdotto']);//}
+        //if(isset($request['data'])){
+        $prodotto->setData($request['data']);//}
+        //if(isset($request['produttore_id'])){
+        $prodotto->setProduttore_id($request['produttore_id']);//}
+        //if(isset($request['descrizione'])){
+        $prodotto->setDescrizione($request['descrizione']);//}
         
         return $prodotto;
     }
