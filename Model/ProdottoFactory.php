@@ -80,7 +80,6 @@ class ProdottoFactory{
     }
     
     public function creaProdotto($request) {
-        echo 'Sono in creaProdotto';
         $prodotto = new Prodotto();
         //if(isset($request['nomeProdotto'])){
         $prodotto->setNome($request['nomeProdotto']);//}
@@ -102,6 +101,7 @@ class ProdottoFactory{
      * @return int
      */
     public function salva(Prodotto $prodotto){
+        echo 'Im trying to saving';
         $mysqli = Database::getInstance()->connectDb();
         if(!isset($mysqli)){
             error_log("Impossibile creare database ");

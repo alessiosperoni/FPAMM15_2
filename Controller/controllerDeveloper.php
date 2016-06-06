@@ -72,8 +72,8 @@ class ControllerDeveloper extends ControllerUser {
                     break;
                 case 'addCode':
                     $prodotto = ProdottoFactory::instance()->creaProdotto($request);
-                    ProdottoFactory::instance()->salva($prodotto);
                     ControllerDeveloper::$idProdotto=$prodotto->getId();
+                    ProdottoFactory::instance()->salva($prodotto);
                     
                     //$prodotto = ProdottoFactory::instance()->cercaProdottoPerId(ControllerDeveloper::$idProdotto);
                     $this->showProdotto($vd);
