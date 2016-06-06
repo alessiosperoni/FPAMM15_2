@@ -67,11 +67,12 @@ class ControllerDeveloper extends ControllerUser {
                     //echo $request['nomeProdotto'];
                     
                     //if(isset($request['nomeProdotto'])){
-                    $prodotto = ProdottoFactory::instance()->creaProdotto($request);//}
+                    //$prodotto = ProdottoFactory::instance()->creaProdotto($request);//}
+                    $prodotto = new Prodotto();
                     echo 'deb2: post creaProdotto___';
                     break;
                 case 'addCode':
-                    
+                    $prodotto = ProdottoFactory::instance()->creaProdotto($request);
                     ProdottoFactory::instance()->salva($prodotto);
                     ControllerDeveloper::$idProdotto=$prodotto->getId();
                     
