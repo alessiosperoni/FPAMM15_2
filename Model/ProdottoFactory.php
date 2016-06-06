@@ -133,6 +133,14 @@ class ProdottoFactory{
         echo '_maxId=';
         echo $bind;
         $stmt->close();
+        $mysqli->close();
+        
+        $mysqli = Database::getInstance()->connectDb();
+        if(!isset($mysqli)){
+            error_log("Impossibile creare database ");
+            $mysqli->close();
+            return 0;
+        }
         $stmt = $mysqli->stmt_init();
         $query = "INSERT INTO `Prodotto`
                 (`id`, `nome`, `modello`, `data`, `produttore_id`, `descrizione`) 
