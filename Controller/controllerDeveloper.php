@@ -72,10 +72,10 @@ class ControllerDeveloper extends ControllerUser {
                     break;
                 case 'addCode':
                     $prodotto = ProdottoFactory::instance()->creaProdotto($request);
-                    ProdottoFactory::instance()->salva($prodotto);
-                    ControllerDeveloper::$idProdotto=$prodotto->getId();
-                    
-                    $prodotto = ProdottoFactory::instance()->cercaProdottoPerId(ControllerDeveloper::$idProdotto);
+                    ControllerDeveloper::$idProdotto = ProdottoFactory::instance()->salva($prodotto);
+                    //$prodotto->getId();
+                    if(ControllerDeveloper::$idProdotto == 0){error_log("id Non Valido");}else{
+                    $prodotto = ProdottoFactory::instance()->cercaProdottoPerId(ControllerDeveloper::$idProdotto);}
                     $this->showProdotto($vd);
                     break;
                 case 'chiSiamo':

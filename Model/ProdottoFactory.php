@@ -150,6 +150,6 @@ class ProdottoFactory{
             error_log("fallita esecuzione statement");
             return 0;
         }
-        
+        return $prodotto->getId();
     }
 }
