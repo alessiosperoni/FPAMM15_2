@@ -3,7 +3,7 @@
 include_once 'controllerBase.php';
 
 class ControllerDeveloper extends ControllerUser {
-    static $idProdotto=1;
+    //static $idProdotto=1;
     
     public function __construct() {
         parent::__construct();
@@ -62,7 +62,7 @@ class ControllerDeveloper extends ControllerUser {
                     $this->showDeveloperHome($vd);
                     break;
                 case 'newProdotto':
-                    //$prodotto = new Prodotto();
+                    $prodotto = new Prodotto();
                     $this->showCreaProdotto($vd);
                     //echo 'deb1: pre creaProdotto___';
                     //echo $request['nomeProdotto'];
@@ -72,10 +72,10 @@ class ControllerDeveloper extends ControllerUser {
                     break;
                 case 'addCode':
                     $prodotto = ProdottoFactory::instance()->creaProdotto($request);
-                    ControllerDeveloper::$idProdotto = ProdottoFactory::instance()->salva($prodotto);
+                    $idProdotto = ProdottoFactory::instance()->salva($prodotto);
                     //$prodotto->getId();
-                    if(ControllerDeveloper::$idProdotto == 0){error_log("id Non Valido");}else{
-                    $prodotto = ProdottoFactory::instance()->cercaProdottoPerId(ControllerDeveloper::$idProdotto);}
+                    if($idProdotto == 0){error_log("id Non Valido");}else{
+                    $prodotto = ProdottoFactory::instance()->cercaProdottoPerId($idProdotto);}
                     $this->showProdotto($vd);
                     break;
                 case 'chiSiamo':
