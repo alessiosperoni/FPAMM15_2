@@ -101,7 +101,7 @@ class ProdottoFactory{
      * @return int
      */
     public function salva(Prodotto $prodotto){
-        echo 'Im trying to saving_idProdotto=';
+        echo 'Im trying to saving_id_Prodotto=';
         $mysqli = Database::getInstance()->connectDb();
         if(!isset($mysqli)){
             error_log("Impossibile creare database ");
@@ -151,8 +151,8 @@ class ProdottoFactory{
             error_log("fallita esecuzione statement");
             return 0;
         }
-        $mysqli->close();
         $stmt->close();
+        $mysqli->close();
         return $prodotto->getId();
     }
 }
