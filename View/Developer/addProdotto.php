@@ -1,6 +1,6 @@
 <div class="input-form">
     <form method="post" action="index.php?page=developer&cmd=newProdotto">
-        <input type="hidden" name="user" value="<?=$prodotto->getId()?>"/>
+        <input type="hidden" name="prodotto" value="<?=$prodotto->getId()?>"/>
         <label for="Nome prodotto">Nome</label>
         <input type="text" name="nome" id="nome" value="<?= $prodotto->getNome() ?>"/>
         <br/>
