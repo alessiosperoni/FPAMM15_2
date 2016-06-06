@@ -61,10 +61,8 @@ class Prodotto {
         return true;
     }
     public function setData($data) {
-        //$this->data=$data;
-        
-        $this->data = date_parse_from_format('d/m/Y', $data);
-
+        $this->data=$data;
+        //$this->data = date_parse_from_format('d/m/Y', $data);
         return true;
     }
     public function setProduttore_id($produttore_id) {
