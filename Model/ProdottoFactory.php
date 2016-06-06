@@ -124,7 +124,8 @@ class ProdottoFactory{
         //echo '___stampa row___';
         $bind = $stmt->bind_result(
                 $row['massimo']);
-        echo $bind['massimo'];
+        if(!$bind){echo '--ERR--';}
+        echo $row['massimo'];
         if (!$stmt->fetch()) {
             return null;
         }
