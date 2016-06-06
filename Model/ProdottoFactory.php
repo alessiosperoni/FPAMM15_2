@@ -128,10 +128,12 @@ class ProdottoFactory{
         if (!$stmt->fetch()) {
             return null;
         }
-        $prodotto->setId($bind[1]+1);
+        $prodotto->setId($bind+1);
         echo $prodotto->getId();
         echo '_maxId=';
-        echo $bind[1];
+        echo $bind;
+        $stmt->close();
+        $stmt = $mysqli->stmt_init();
         $query = "INSERT INTO `Prodotto`
                 (`id`, `nome`, `modello`, `data`, `produttore_id`, `descrizione`) 
                 VALUES (?,?,?,?,?,?);";
