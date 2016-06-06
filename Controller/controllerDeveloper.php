@@ -78,6 +78,15 @@ class ControllerDeveloper extends ControllerUser {
                     $prodotto = ProdottoFactory::instance()->cercaProdottoPerId($idProdotto);}
                     $this->showProdotto($vd);
                     break;
+                case 'scegliProdotto':
+                    $this->setProdotto($vd);
+                    break;
+                case 'prodotto':
+                    if(!isset($request['id'])){error_log("id Non Valido");}else{
+                    $prodotto = ProdottoFactory::instance()->cercaProdottoPerId($idProdotto);}
+                    if(!isset($prodotto)){$this->setProdotto($vd);}else{
+                    $this->showProdotto($vd);}
+                    break;
                 case 'chiSiamo':
                     $this->showChiSiamo($vd);
                     break;
@@ -135,5 +144,12 @@ class ControllerDeveloper extends ControllerUser {
         $vd->setHeader('header.php');
         $vd->setNavigation('Developer/Navigation.php');
     }
-    
+    protected function setProdotto($vd){
+        $vd->setTitolo("Prodotto");
+        $vd->setContenuto('Developer/scegliProdotto.php');
+        $vd->setFooter('footer.php');
+        $vd->setSocial('social.php');
+        $vd->setHeader('header.php');
+        $vd->setNavigation('Developer/Navigation.php');
+    } 
 }

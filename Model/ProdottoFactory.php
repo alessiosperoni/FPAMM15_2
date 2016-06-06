@@ -3,7 +3,6 @@ include_once 'Prodotto.php';
 class ProdottoFactory{
     
     public function __construct() {
-        
     }
     public function instance() {
         return new ProdottoFactory();
@@ -81,17 +80,11 @@ class ProdottoFactory{
     
     public function creaProdotto($request) {
         $prodotto = new Prodotto();
-        //if(isset($request['nomeProdotto'])){
-        $prodotto->setNome($request['nome']);//}
-        //if(isset($request['modelloProdotto'])){
-        $prodotto->setModello($request['modello']);//}
-        //if(isset($request['data'])){
-        $prodotto->setData($request['data']);//}
-        //if(isset($request['produttore_id'])){
-        $prodotto->setProduttore_id($request['produttore_id']);//}
-        //if(isset($request['descrizione'])){
-        $prodotto->setDescrizione($request['descrizione']);//}
-        
+        $prodotto->setNome($request['nome']);
+        $prodotto->setModello($request['modello']);
+        $prodotto->setData($request['data']);
+        $prodotto->setProduttore_id($request['produttore_id']);
+        $prodotto->setDescrizione($request['descrizione']);
         return $prodotto;
     }
     
@@ -115,12 +108,10 @@ class ProdottoFactory{
             error_log("Impossibile inizializzare il prepared statement");
             return 0; 
         }
-        /**********************************************************************************************************/
         if(!$stmt->execute()){
             error_log("fallita esecuzione statement");
             return 0;
         }
-        $row = array();
         $intero=0;
         $bind = $stmt->bind_result($intero);
         echo $intero;
@@ -133,7 +124,6 @@ class ProdottoFactory{
         echo $intero;
         $stmt->close();
         $mysqli->close();
-        
         $mysqli = Database::getInstance()->connectDb();
         if(!isset($mysqli)){
             error_log("Impossibile creare database ");

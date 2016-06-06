@@ -103,4 +103,12 @@ class ControllerUser extends ControllerBase {
         $vd->setHeader('header.php');
         $vd->setNavigation('User/Navigation.php');
     }
+    protected function setProdotto($vd){
+        $vd->setTitolo("Prodotto");
+        $vd->setContenuto('Developer/scegliProdotto.php');
+        $vd->setFooter('footer.php');
+        $vd->setSocial('social.php');
+        $vd->setHeader('header.php');
+        $vd->setNavigation('User/Navigation.php');
+    } 
 }
