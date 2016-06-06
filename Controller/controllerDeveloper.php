@@ -62,7 +62,7 @@ class ControllerDeveloper extends ControllerUser {
                     $this->showDeveloperHome($vd);
                     break;
                 case 'newProdotto':
-                    $prodotto = new Prodotto();
+                    //$prodotto = new Prodotto();
                     $this->showCreaProdotto($vd);
                     //echo 'deb1: pre creaProdotto___';
                     //echo $request['nomeProdotto'];
