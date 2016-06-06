@@ -123,7 +123,9 @@ class ProdottoFactory{
         $row = array();
         $bind = $stmt->bind_result(
                 $row['massimo']);
-        
+        if (!$stmt->fetch()) {
+            return null;
+        }
         $prodotto->setId($bind+1);
         echo $prodotto->getId();
         echo '_maxId=';
@@ -150,6 +152,9 @@ class ProdottoFactory{
         if(!$stmt->execute()){
             error_log("fallita esecuzione statement");
             return 0;
+        }
+        if (!$stmt->fetch()) {
+            return null;
         }
         $stmt->close();
         $mysqli->close();
