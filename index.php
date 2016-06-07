@@ -31,7 +31,7 @@
                         $controllo->handleInput($request);
                         break;
                     default:
-                        include 'descrizione.php';
+                        include 'Descrizione.php';
                         break;
                 }
             }
