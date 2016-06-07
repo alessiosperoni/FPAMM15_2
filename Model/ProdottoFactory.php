@@ -94,7 +94,7 @@ class ProdottoFactory{
      * @return int
      */
     public function salva(Prodotto $prodotto){
-        echo 'Im trying to saving_id_Prodotto=';
+        
         $mysqli = Database::getInstance()->connectDb();
         if(!isset($mysqli)){
             error_log("Impossibile creare database ");
@@ -114,14 +114,12 @@ class ProdottoFactory{
         }
         $intero=0;
         $bind = $stmt->bind_result($intero);
-        echo $intero;
+
         if (!$stmt->fetch()) {
             return null;
         }
         $prodotto->setId($intero+1);
-        echo $prodotto->getId();
-        echo '_maxId=';
-        echo $intero;
+        
         $stmt->close();
         $mysqli->close();
         $mysqli = Database::getInstance()->connectDb();
