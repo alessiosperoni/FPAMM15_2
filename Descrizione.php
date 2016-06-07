@@ -74,7 +74,7 @@
         
         <p> <strong> Homepage</strong> </p>
         <ul>
-            <li> <a href="spano.sc.unica.it/amm2015/speroniAlessio/index.php?page=login">link completo alla pagina</a></li>
+            <li> <a href="http://spano.sc.unica.it/amm2015/speroniAlessio/index.php?page=login">link completo alla pagina</a></li>
             <li> <a href="index.php?page=login">Se il precedente non funziona</a></li>
         </ul>
         
