@@ -30,8 +30,8 @@
                             != User::Developer){}
                         $controllo->handleInput($request);
                         break;
-
                     default:
+                        require 'descrizione.php';
                         break;
                 }
             }
